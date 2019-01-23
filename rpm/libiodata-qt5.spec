@@ -51,12 +51,11 @@ mv %{buildroot}/%{_datadir}/%{_name}-tests/tests.xml %{buildroot}/%{_datadir}/%{
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING debian/changelog debian/copyright
+%license COPYING debian/copyright
 %{_libdir}/%{name}.so.*
 
 %files devel
 %defattr(-,root,root,-)
-%doc COPYING
 %{_bindir}/iodata-qt5-type-to-c++
 %{_includedir}/iodata-qt5/*
 %{_libdir}/%{name}.so
@@ -64,6 +63,5 @@ mv %{buildroot}/%{_datadir}/%{_name}-tests/tests.xml %{buildroot}/%{_datadir}/%{
 
 %files tests
 %defattr(-,root,root,-)
-%doc COPYING
 %{_bindir}/%{_name}-test
 %{_datadir}/%{name}-tests/tests.xml
