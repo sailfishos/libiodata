@@ -10,6 +10,7 @@ using namespace std ;
 #include "../src/storage.h"
 #include "../src/log.h"
 #include <crypt.h>
+#include <unistd.h>
 
 void dump_h(ostringstream &h, iodata::validator *v)
 {
