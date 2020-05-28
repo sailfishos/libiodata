@@ -3,7 +3,6 @@ Name:     libiodata-qt5
 Version:  0.19.8
 Release:  1
 Summary:  Library for input/ouput data
-Group:    System/System Control
 License:  LGPLv2
 URL:      https://git.sailfishos.org/mer-core/libiodata
 Source0:  %{name}-%{version}.tar.bz2

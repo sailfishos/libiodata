@@ -7,7 +7,7 @@ SOURCES = iodata.cpp validator.cpp storage.cpp misc.cpp
 
 equals(QT_MAJOR_VERSION, 4): TARGET = iodata
 equals(QT_MAJOR_VERSION, 5): TARGET = iodata-qt5
-target.path = /usr/lib
+target.path = $$[QT_INSTALL_LIBS]
 
 devheaders.files = iodata.h validator.h storage.h iodata validator storage
 equals(QT_MAJOR_VERSION, 4): devheaders.path  = /usr/include/iodata
