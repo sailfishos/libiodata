@@ -7,6 +7,7 @@ License:  LGPLv2
 URL:      https://git.sailfishos.org/mer-core/libiodata
 Source0:  %{name}-%{version}.tar.bz2
 
+BuildRequires: pkgconfig(libcrypt)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: bison
 BuildRequires: flex
