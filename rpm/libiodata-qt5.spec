@@ -4,7 +4,7 @@ Version:  0.19.8
 Release:  1
 Summary:  Library for input/ouput data
 License:  LGPLv2
-URL:      https://git.sailfishos.org/mer-core/libiodata
+URL:      https://github.com/sailfishos/libiodata
 Source0:  %{name}-%{version}.tar.bz2
 
 BuildRequires: pkgconfig(libcrypt)
@@ -17,7 +17,6 @@ This package provides a library for writing and reading structured data.
 
 %package devel
 Summary:  Development package for %{name}
-Group:    Development/Libraries
 Requires: pkgconfig(Qt5Core)
 Requires: %{name} = %{version}-%{release}
 
@@ -26,7 +25,6 @@ Provides header files for iodata library.
 
 %package tests
 Summary:  Testcases for iodata library
-Group:    Development/System
 Requires: testrunner-lite
 
 %description tests
