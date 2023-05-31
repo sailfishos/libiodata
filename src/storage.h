@@ -34,7 +34,7 @@
 
 #include "iodata.h"
 
-namespace iodata { class storage ; }
+namespace iodata { class storage ; class validator; }
 
 struct iodata::storage
 {
@@ -55,7 +55,7 @@ public:
   void set_primary_path(const std::string &) ;
   void set_secondary_path(const std::string &) ;
   void set_validator(const std::string &path, const std::string &name) ;
-  void set_validator(validator *v, const std::string &name) ;
+  void set_validator(iodata::validator *v, const std::string &name) ;
 
   iodata::record *load() ;
   int save(iodata::record *rec) ;
