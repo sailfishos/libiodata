@@ -29,46 +29,50 @@
 #ifndef MAEMO_IODATA_STORAGE_H
 #define MAEMO_IODATA_STORAGE_H
 
-#include <vector>
 #include <string>
+#include <vector>
 
 #include "iodata.h"
 
-namespace iodata { class storage ; class validator; }
+namespace iodata {
+class storage;
+class validator;
+} // namespace iodata
 
 struct iodata::storage
 {
 private:
-  std::string data_cached ;
-  int data_source ;
+    std::string data_cached;
+    int data_source;
 
-  std::vector<std::string> path ;
+    std::vector<std::string> path;
 
-  iodata::validator *type_validator ;
-  bool validator_owned ;
-  std::string type_name ;
+    iodata::validator *type_validator;
+    bool validator_owned;
+    std::string type_name;
 
 public:
-  storage() ;
- ~storage() ;
+    storage();
+    ~storage();
 
-  void set_primary_path(const std::string &) ;
-  void set_secondary_path(const std::string &) ;
-  void set_validator(const std::string &path, const std::string &name) ;
-  void set_validator(iodata::validator *v, const std::string &name) ;
+    void set_primary_path(const std::string &);
+    void set_secondary_path(const std::string &);
+    void set_validator(const std::string &path, const std::string &name);
+    void set_validator(iodata::validator *v, const std::string &name);
 
-  iodata::record *load() ;
-  int save(iodata::record *rec) ;
-  int source() { return data_source ; }
-  bool fix_files(bool force) ;
+    iodata::record *load();
+    int save(iodata::record *rec);
+    int source() { return data_source; }
+    bool fix_files(bool force);
 
-  static int read_file_to_string(const char *file, string &input) ;
-  static int write_string_to_file(const char *file, const string &data) ;
+    static int read_file_to_string(const char *file, string &input);
+    static int write_string_to_file(const char *file, const string &data);
+
 private:
-  int move_files(int index_from, int index_to) ;
-  int write_string(int index, const string &data) ;
+    int move_files(int index_from, int index_to);
+    int write_string(int index, const string &data);
 
-  record *parse_string_to_tree(std::string &message) ;
-} ;
+    record *parse_string_to_tree(std::string &message);
+};
 
 #endif

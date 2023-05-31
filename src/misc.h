@@ -26,6 +26,6 @@
 #include <cstdarg>
 #include <string>
 
-std::string str_vprintf(const char *format, va_list varg) ;
+std::string str_vprintf(const char *format, va_list varg);
 
 #endif
