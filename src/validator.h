@@ -20,12 +20,6 @@
 |                                                                       |
 +----------------------------------------------------------------------*/
 
-/*----------------------------------------------------------+
-| Notice: the API decribed in this header file has to be    |
-|       considered as private during the Harmattan program; |
-|       contact the author, if you wish to use this library |
-+----------------------------------------------------------*/
-
 #ifndef MAEMO_IODATA_VALIDATOR_H
 #define MAEMO_IODATA_VALIDATOR_H
 
