@@ -5,11 +5,13 @@ QT -= gui
 HEADERS = iodata.h validator.h storage.h misc.h log.h
 SOURCES = iodata.cpp validator.cpp storage.cpp misc.cpp
 
-TARGET = iodata-qt5
+equals(QT_MAJOR_VERSION, 5): TARGET = iodata-qt5
+equals(QT_MAJOR_VERSION, 6): TARGET = iodata-qt6
 target.path = $$[QT_INSTALL_LIBS]
 
 devheaders.files = iodata.h validator.h storage.h iodata validator storage
-devheaders.path  = /usr/include/iodata-qt5
+equals(QT_MAJOR_VERSION, 5): devheaders.path  = /usr/include/iodata-qt5
+equals(QT_MAJOR_VERSION, 6): devheaders.path  = /usr/include/iodata-qt6
 
 INSTALLS = target devheaders
 
