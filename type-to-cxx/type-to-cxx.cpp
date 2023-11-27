@@ -14,7 +14,11 @@ using namespace std;
 
 void dump_h(ostringstream &h, iodata::validator *v)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    h << "#include <iodata-qt6/validator>" << endl ;
+#elif QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     h << "#include <iodata-qt5/validator>" << endl;
+#endif
     for (vector<string>::const_iterator it = v->v_namespace.begin(); it != v->v_namespace.end();
          ++it)
         h << "namespace " << *it << " {" << endl;
@@ -188,7 +192,11 @@ int main_try(int ac, char **av)
     }
 
     if (not c_output.empty()) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        string include = "#include <iodata-qt6/validator>\n";
+#else
         string include = "#include <iodata-qt5/validator>\n";
+#endif
 
         if (not h_output.empty())
             include += "#include \"" + h_output + "\"\n";
